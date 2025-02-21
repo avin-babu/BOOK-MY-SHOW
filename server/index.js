@@ -5,8 +5,10 @@ const movieRouter = require('./ROUTES/movieRoutes.js')
 const theatreRouter = require('./ROUTES/theatreRoutes.js');
 const showRouter = require('./ROUTES/showRoutes.js');
 const bookingRoute = require('./ROUTES/bookingRoute.js');
-
+const path = require('path');
 const app = express();
+const clientBuildPath = path.join(__dirname,"../client/build");
+app.use(express.static(clientBuildPath));
 // const cors = require('cors');
 
 app.use(express.json());
