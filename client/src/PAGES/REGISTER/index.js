@@ -1,6 +1,6 @@
 import React from 'react'
 import { LockOutlined, UserOutlined,MailOutlined } from '@ant-design/icons';
-import { Button, Form, Input,message } from 'antd';
+import { Button, Form, Input,message, Radio, Flex  } from 'antd';
 import { Link } from 'react-router-dom';
 import {registerHanlder} from '../../api/users';
 
@@ -49,15 +49,47 @@ function Register() {
               <Input prefix={<LockOutlined/>} placeholder="Password" type='password'/>
             </Form.Item>
 
-            {/* <Form.Item
-              name="confirmPassword"
-              rules={[{ required: true, message: 'Please input your Password!' }]}
-            >
-              <Input prefix={<LockOutlined/>} placeholder="Confirm password" type='password'/>
-            </Form.Item> */}
+          {/* <Form.Item 
+            label="Register as an Admin"
+            name="isAdmin"
+            rules={[{required: true, message: "you must choose anyone"}]}>
+              <div className=''>
+                <Radio.Group>
+                  <Radio value={'admin'}>Yes</Radio>
+                  <Radio value={'user'}>No</Radio>
+                </Radio.Group>
+              </div>
+
+          </Form.Item>
+
+          <Form.Item 
+            label="Register as an Partner"
+            name="isPartner"
+            rules={[{required: true, message: "you must choose anyone"}]}>
+              <div className=''>
+                <Radio.Group>
+                  <Radio value={'partner'}>Yes</Radio>
+                  <Radio value={'user'}>No</Radio>
+                </Radio.Group>
+              </div>
+
+          </Form.Item> */}
+
+          <Form.Item 
+            label="Register as "
+            name="role"
+          >
+            <Flex vertical gap="middle" >
+              <Radio.Group defaultValue="user" buttonStyle="solid" >
+                <Radio.Button value="user">User</Radio.Button>
+                <Radio.Button value="admin">Admin</Radio.Button>
+                <Radio.Button value="partner">Partner</Radio.Button>
+              </Radio.Group>
+            </Flex>
+          </Form.Item>
 
             <Form.Item>
-              <Button block type="primary" htmlType="submit" className='bg-green-500'>
+              <Button block type="primary" htmlType="submit" className='font-bold bg-red-700/80'>
                 Register
               </Button>
             </Form.Item>

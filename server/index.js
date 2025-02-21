@@ -1,6 +1,10 @@
 const express = require('express');
 require('dotenv').config();
 const userRouter = require('../server/ROUTES/loginRoutes.js');
+const movieRouter = require('./ROUTES/movieRoutes.js')
+const theatreRouter = require('./ROUTES/theatreRoutes.js');
+const showRouter = require('./ROUTES/showRoutes.js');
+const bookingRoute = require('./ROUTES/bookingRoute.js');
 
 const app = express();
 // const cors = require('cors');
@@ -16,8 +20,15 @@ app.use((req, res, next) => {
 
 
 app.use("/api/users",userRouter);
+app.use('/api/movies',movieRouter);
+app.use('/api/theatres',theatreRouter);
+app.use('/api/shows',showRouter);
+app.use('/api/bookings',bookingRoute);
 
 const dbConnect = require('./CONFIG/db.js');
+
+
+
 dbConnect();
 
 // const express = require('express');

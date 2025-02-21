@@ -17,6 +17,13 @@ function Login() {
       if(response.success){
         message.success(response.message);
         localStorage.setItem("token",response.token);
+        console.log(response,'response from backend')
+        if(response.role === 'partner'){
+          return navigate('/partner');
+        }
+        if(response.role === 'admin'){
+          return navigate('/home');
+        }
         navigate('/')
       }
       else{
@@ -48,16 +55,20 @@ function Login() {
           >
             <Input prefix={<LockOutlined/>} placeholder="Password" type='password'/>
           </Form.Item>
-
+          
           <Form.Item>
-            <Button block type="primary" htmlType="submit">
+            <Button block type="primary" htmlType="submit" className='font-bold bg-red-700/80'>
               Log in
             </Button>
           </Form.Item>
         </Form>
-        <div className='text-base'>
+        <div className='font-sans text-sm font-extralight'>
             Not a User?
-            <Link to='/register' className='underline p-2 text-blue-700'>Register</Link>
+            <Link to='/register' className='underline p-2 text-blue-700 font-semibold'>Register</Link>
+          </div>
+          <div className=' font-sans text-sm pt-3 font-extralight'>
+            Forgot Password?
+            <Link to='/forgot-password' className='underline p-2 text-blue-700 font-semibold'>Click here</Link>
           </div>
       </div>
     </div>

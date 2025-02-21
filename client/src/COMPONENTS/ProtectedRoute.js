@@ -16,7 +16,7 @@ import { message,Layout,Menu } from 'antd';
 
 function ProtectedRoute({children}) {
     const {user} = useSelector((state)=>state.user);
-    console.log('user:', user);
+    // console.log('user:', user);
     
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -77,7 +77,7 @@ function ProtectedRoute({children}) {
         try{
             dispatch(showLoading());
             const response = await getCurrentUser();
-            console.log('response :',response.data);
+            // console.log('response :',response.data);
             dispatch(setUser(response.data));
             dispatch(hideLoading());
         }

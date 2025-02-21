@@ -35,3 +35,43 @@ export const getCurrentUser = async ()=>{
     }
     
 }
+
+export const forgetPassword = async (value)=>{
+    try{
+        const response = await axiosInstance.post('/api/users/forget-password',value);
+        return response.data;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+export const otpChecker = async (value)=>{
+    try{
+        const response = await axiosInstance.post('/api/users/otp-validator',value);
+        return response.data;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+export const resetPassword = async (value)=>{
+    try{
+        const response = await axiosInstance.post('/api/users/reset-password',value);
+        return response.data;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+export const emailHandler = async (value)=>{
+    try{
+        const response = await axiosInstance.post('/api/users/reset-password',value);
+        return response.data;
+    }
+    catch(err){
+        console.log(err);
+    }
+}

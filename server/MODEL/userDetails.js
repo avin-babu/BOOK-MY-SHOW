@@ -15,27 +15,17 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
     },
-    // confirmPassword:{
-    //     type: String,
-    //     required: true,
-    //     validate:{
-    //         validator: function(value){
-    //             return this.password==value;
-    //         },
-    //         message:"Passwords do not match!"
-    //     }
-    // },
-    isAdmin: {
-        type: Boolean,
-        required:true,
-        default: false
-    },
     role: {
         type: String,
         required: true,
-        enum: ["admin", "user", "partner"],
         default: "user",
-      },
+    },
+    otp: {
+        type: String,
+    },
+    otpExpiry : {
+        type : Date
+    }
 })
 
 // userSchema.pre('save',function(next){

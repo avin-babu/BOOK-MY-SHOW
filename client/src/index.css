@@ -15,3 +15,101 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.seat-ul{
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+.align-items-center{
+  align-items: center;
+}
+.justify-content-center{
+  justify-content: center;
+}
+.seat-ul .seat-btn{
+  background-color: white;
+  border: 1px solid #1EA83c;
+  color: #1EA83c;
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight:normal;
+  min-height: unset;
+  border-radius: 10%;
+}
+
+.seat-ul .seat-btn:hover{
+  background-color: gainsboro;
+}
+
+.seat-ul .selected{
+  border-color: #02a802;
+  background-color: #02a802;
+  color: #fff;
+}
+
+.seat-ul .booked{
+  background-color: #ddd;
+  color:#999;
+  border-color: #ddd;
+  cursor:not-allowed;
+  pointer-events: none;
+}
+.seat-ul .selected:hover{
+  background-color: green;
+  
+}
+
+.screen-div{
+  max-width: 100%;
+  margin-inline: auto;
+  height: 10px;
+  background-color: rgb(178, 223, 240);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom: 2px solid rgb(110, 180, 208);
+}
+  
+.bottom-card{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* Change as needed */
+  padding: 15px 20px;
+  /* border-top: 1px solid #ddd; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  flex-direction: column;
+  /* box-shadow: 0px -4px 10px rgba(19, 12, 12, 0.1); */
+}
+
+.justify-content-between{
+  justify-content: space-between;
+}
+
+.container{
+  min-height: 100vh; 
+  padding-bottom: 50px; 
+}
+
+.text-container{
+  background-color: rgb(231, 80, 80);
+  color: white;
+  padding: 10px  20px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-radius: 10px;
+}

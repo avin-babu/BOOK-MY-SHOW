@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification OTP</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #eff2f7;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start; 
+            
+        }
+        
+        .table {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 100%;
+            font-style: normal;
+            text-align:left
+        }
+        .table td {
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table style="width: 100%; border: 0;">
+            <tbody>
+                <tr>
+                    <td >
+                        <img src="https://brandlogos.net/wp-content/uploads/2022/10/bookmyshow-logo_brandlogos.net_rzqea.png" style="height: 70px; width: 100px;"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      <br/>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Dear &nbsp; #{name}, <br></td> 
+                </tr>
+                <tr>
+                    <td style="font-style: italic;">Please enter the OTP below to reset your bookMYshow account password.</td>
+                </tr>
+                <tr style="font-size:larger; font-weight: bold; font-style: normal;">
+                    <td >#{otp} <br /></td>
+                </tr>
+                <tr>
+                    <td>Note: This OTP is valid for the next 1 hour only. <br /></td>
+                </tr>
+                <tr>
+                    <td style="font-style: italic;">If you didn't request this OTP, your account is safe. Someone may have entered your email by mistake. <br /></td>
+                </tr>
+                <tr>
+                    <td ><strong>Do not share this OTP with anyone.</strong> <br /></td>
+                </tr>
+                <tr>
+                    <td>Regards,<br>bookMYshow Team</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
