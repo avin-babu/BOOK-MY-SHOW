@@ -1,15 +1,28 @@
 const express = require('express');
 require('dotenv').config();
+
+const path = require('path');
 const userRouter = require('../server/ROUTES/loginRoutes.js');
 const movieRouter = require('./ROUTES/movieRoutes.js')
 const theatreRouter = require('./ROUTES/theatreRoutes.js');
 const showRouter = require('./ROUTES/showRoutes.js');
 const bookingRoute = require('./ROUTES/bookingRoute.js');
+const cors = require('cors');
 
+const clientBuildPath = path.join(__dirname,"../client/build");
 const app = express();
-// const cors = require('cors');
+
+app.use(cors(
+    {
+        origin: ["https://book-my-show-nptj.onrender.com/"], 
+        methods: "GET,POST,PUT,DELETE",
+        credentials: true
+    }
+))
+
 
 app.use(express.json());
+app.use(express.static(clientBuildPath));
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
