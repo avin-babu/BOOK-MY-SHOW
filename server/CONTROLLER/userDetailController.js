@@ -3,7 +3,6 @@ const userModel = require('../MODEL/userDetails');
 const JWT = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const emailHandler = require('../CONFIG/emailHandler');
-const { faTruckField } = require('@fortawesome/free-solid-svg-icons/faTruckField');
 
 const SALT_ROUNDS = 12;
 function otpGenerator(){
