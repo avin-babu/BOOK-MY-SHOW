@@ -7,20 +7,17 @@ const movieRouter = require('./ROUTES/movieRoutes.js')
 const theatreRouter = require('./ROUTES/theatreRoutes.js');
 const showRouter = require('./ROUTES/showRoutes.js');
 const bookingRoute = require('./ROUTES/bookingRoute.js');
-<<<<<<< HEAD
 const cors = require('cors');
 
 const clientBuildPath = path.join(__dirname,"../client/build");
 const app = express();
 
-=======
 const path = require('path');
 const cors = require('cors');
 const app = express();
 
 const clientBuildPath = path.join(__dirname,"../client/build");
 app.use(express.static(clientBuildPath));
->>>>>>> 09c1c4ff3ac2cb1fbae77dcbfc0279bc89e00f00
 app.use(cors(
     {
         origin: ["https://book-my-show-nptj.onrender.com/"], 
@@ -28,10 +25,7 @@ app.use(cors(
         credentials: true
     }
 ))
-<<<<<<< HEAD
 
-=======
->>>>>>> 09c1c4ff3ac2cb1fbae77dcbfc0279bc89e00f00
 
 app.use(express.json());
 app.use(express.static(clientBuildPath));

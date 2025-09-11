@@ -50,7 +50,7 @@ function ProtectedRoute({children}) {
                                     navigate('/partner');
                                 }
                                 else{
-                                    navigate('/profile');
+                                    navigate('/');
                                 }
                             }
                         }>
