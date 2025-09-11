@@ -1,32 +1,18 @@
-# Stage 1: Build the React app
-FROM node:20-alpine AS build
+# Use Node image
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package.json package-lock.json* ./
-
-# Install dependencies
+# Copy package files and install dependencies
+COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the source code
-COPY . .
+COPY . ./
 
-# Build the React app
-RUN npm run build
+# Expose the port React uses
+EXPOSE 3000
 
-# Stage 2: Serve the app with nginx
-FROM nginx:alpine
-
-# Copy built files from previous stage
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Copy custom nginx config (optional, for SPA routing)
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start the app in development mode
+CMD ["npm", "start"]
