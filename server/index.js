@@ -12,11 +12,6 @@ const cors = require('cors');
 const clientBuildPath = path.join(__dirname,"../client/build");
 const app = express();
 
-const path = require('path');
-const cors = require('cors');
-const app = express();
-
-const clientBuildPath = path.join(__dirname,"../client/build");
 app.use(express.static(clientBuildPath));
 app.use(cors(
     {
@@ -28,7 +23,7 @@ app.use(cors(
 
 
 app.use(express.json());
-app.use(express.static(clientBuildPath));
+
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
