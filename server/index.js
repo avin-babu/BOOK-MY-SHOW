@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 
 const path = require('path');
-const userRouter = require('../server/ROUTES/loginRoutes.js');
+const userRouter = require('./ROUTES/loginRoutes');
 const movieRouter = require('./ROUTES/movieRoutes.js')
 const theatreRouter = require('./ROUTES/theatreRoutes.js');
 const showRouter = require('./ROUTES/showRoutes.js');
