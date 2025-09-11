@@ -11,7 +11,6 @@ const cors = require('cors');
 
 const clientBuildPath = path.join(__dirname,"../client/build");
 const app = express();
-
 app.use(express.static(clientBuildPath));
 app.use(cors(
     {
