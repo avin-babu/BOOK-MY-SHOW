@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 export const axiosInstance = axios.create({
-    baseURL: "https://book-my-show-nptj.onrender.com",
+    baseURL: "http://localhost:3001",
     headers: {
         "Content-Type": "application/json",
     }
