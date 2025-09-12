@@ -7,6 +7,6 @@ spec:
     app: bookmyshow-backend
   ports:
   - protocol: TCP
-    port: 3001
-    targetPort: 3001
+    port: 8082
+    targetPort: 8082
   type: ClusterIP

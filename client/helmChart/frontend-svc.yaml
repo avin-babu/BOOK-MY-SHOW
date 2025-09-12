@@ -4,7 +4,7 @@ metadata:
   name: frontend-service
 spec:
   selector:
-    app: frontend
+    app: bookmyshow-frontend
   ports:
     - port: 80          
       targetPort: 3000  
