@@ -14,7 +14,7 @@ const app = express();
 app.use(express.static(clientBuildPath));
 app.use(cors(
     {
-        origin: ["https://book-my-show-nptj.onrender.com/"], 
+        origin: ["https://localhost:8080"], 
         methods: "GET,POST,PUT,DELETE",
         credentials: true
     }

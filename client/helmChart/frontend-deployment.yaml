@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookmyshow-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bookmyshow-frontend
+  template:
+    metadata:
+      labels:
+        app: bookmyshow-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: avinbabu/bookmyshow-frontend:v1
+        ports:
+        - containerPort: 80
