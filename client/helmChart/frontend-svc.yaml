@@ -9,4 +9,4 @@ spec:
     - port: 80          
       targetPort: 3000  
       nodePort: 30444   
-  type: NodePort
+  type: NodePort  

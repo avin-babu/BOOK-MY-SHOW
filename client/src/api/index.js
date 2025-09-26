@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 export const axiosInstance = axios.create({
-    baseURL: "http://backend-service:3001",
+    baseURL: "http://backend-service:8082",
     headers: {
         "Content-Type": "application/json",
     }
